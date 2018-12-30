@@ -1,0 +1,40 @@
+i. Najpierw uruchoniemie bazy mongoDB.
+
+
+Start your MongoDB database:
+
+From the Command Interpreter:
+
+1.
+
+"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+
+
+
+
+(The --dbpath option points to your database directory.)
+
+NOTE
+
+If your path includes spaces, enclose the entire path in double quotes:
+
+"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath "d:\test\mongo db data"
+If the MongoDB database server is running correctly, the Command Interpreter displays:
+
+[initandlisten] waiting for connections
+
+2.
+
+Connect to MongoDB.
+To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
+
+"C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+
+ii. Uruchomienie serwera.
+
+1. Uruchomiæ wiersz poleceñ np. ten od Node.
+2. Wejœæ do folderu z aplikacj¹.
+3. Wpisaæ w konsoli (lokalizacji foldera z aplikacj¹): set DEBUG=NazwaFolderu:* & npm start
+
+To wszystko, powinno dzia³aæ!
+

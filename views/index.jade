@@ -1,0 +1,27 @@
+extends layout
+
+block content
+      #bg-search
+        h1
+          | Odkryj pomysł 
+          br
+          |  na niezapomniane zaręczyny.
+        form#mainsearch
+          input#autocomplete(type='text', name='search', size='50', placeholder='Wpisz miejscowość')
+          button#searchsubmit(type='submit', value='')
+            img(alt='Search Image', src='/images/magnifer.png')
+      #searchResult
+      #container
+        #results
+          ul
+          each val in result
+            li!= val
+        //
+          tutaj powinny pojawiać się wyniki wyszukiwania lub losowo
+          wyświetlane promowane oferty na stronie startowej
+        .container
+          
+          h1= title
+          p
+            | #{box}
+         

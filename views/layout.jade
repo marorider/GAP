@@ -1,0 +1,35 @@
+doctype html
+html(lang='pl')
+  head
+    title
+      | Go And Propose! Znajdź niezapomniane miejsce na oświadczyny! Znajdź sposób i miejsce na niezapomniane zaręczyny
+    meta(charset='UTF-8')
+    meta(name='descryption', content='Special places and offers to engagment')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/stylesheets/mainCSS_1.css', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+  body
+    header
+      img#logo(src='/images/logo1.png', alt='Logo GoAndPropose')
+      nav#menu
+        ul
+          li
+            a(href='addoffer.html') Dodaj ofertę
+          li
+            a(href='help.html') Pomoc
+          li
+            a(href='signin.html') Zarejestruj się
+          li
+            a(href='login.html') Zaloguj się
+    main
+      block content
+    hr#footerhr
+    footer
+      p  &copy GoAndPropose 
+      a(href='#') O nas
+      a(href='#') Kontakt
+      a(href='#') Regulamin
+      a(href='#') FAQ
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCiRJZFqPYIAyqOgqGR3dP0TZq5qP53PoM&libraries=places&callback=initAutocomplete', async='', defer='')
+    script(src='/javascripts/jquery-3.2.1.min.js', type='text/javascript', defer='')
+    script(src='/javascripts/mainJS.js', type='text/javascript', defer='')
