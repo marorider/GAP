@@ -22,33 +22,15 @@
 /* --------------------------------------------------------------------------------- */
 
 $(document).ready(function(){
-    $('#mainsearch').submit(function(){
-       var formData = $(this).serialize();
-        $.get('/results', formData, searchResults);
-        function searchResults(data) {
-            var newHtml = '<p>Powinna wyświetlić się wprowadzona nazwa: </br>';
+    $('#mainsearch').submit(function(event){
+       var parameters = { search: $('#autocomplete').val() };
+        $.get('/results', parameters, function(data) {
+            var newHtml = '<p>';
             newHtml += data + '</p>'
             $('#results').html(newHtml);
-        }
-        return false;
-    })
+        });
+        event.preventDefault();
+    });
 });
 
-
-/*
-var autocomplete; 
-        
-    
-    
-    function initAutocomplete() {
-    autocomplete = new google.maps.places.Autocomplete(
-            (document.getElementById('autocomplete')),
-    {types:['geocode']}
-            );
-     };
-*/        
-        
-        
-        
-        
-      
+// $(this).val()
