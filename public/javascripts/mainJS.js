@@ -1,5 +1,5 @@
- var autocomplete;
- var countryRestrict = {'country' : 'pl' };
+ let autocomplete;
+ let countryRestrict = {'country' : 'pl' };
         
     
     
@@ -11,21 +11,33 @@
     
     autocomplete.addListener('place_changed', fillInAddress); 
      };
-     
-     function fillInAddress() {
-          var results = autocomplete.getPlace();
-   // var newValue = '<p>' + results.formatted_address + 'adafdfasf' + '</p>';
-   var newValue = '<h3>' + results.name + ', ID: ' + results.place_id + ',formatted_address: ' +                        results.formatted_address + '</h3>';
-    document.getElementById('results').innerHTML  = newValue;
-     };
   
+ function fillInAddress() {
+        let results = autocomplete.getPlace();
+        let parameters = { search: results.place_id };
+        console.log(parameters);
+        $.ajax({
+            url: '/results',
+            data: parameters,
+            error: function() {
+                document.getElementById('results').innerHTML = 'Server error, we are sorry.';
+                },
+            success: function(data) {
+            let newValue = '<p>';
+            newValue += data + '</p>';
+            document.getElementById('results').innerHTML= newValue;
+            
+        }});
+        
+    };
+
 /* --------------------------------------------------------------------------------- */
 
 $(document).ready(function(){
     $('#mainsearch').submit(function(event){
-       var parameters = { search: $('#autocomplete').val() };
+       let parameters = { search: $('#autocomplete').val() };
         $.get('/results', parameters, function(data) {
-            var newHtml = '<p>';
+            let newHtml = '<p>';
             newHtml += data + '</p>'
             $('#results').html(newHtml);
         });

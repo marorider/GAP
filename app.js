@@ -32,8 +32,8 @@ mongoose.connect('mongodb://localhost/test');
 // Zapisywanie do bazy kolekcji Cities
 
 let placesList = new Places({
-    cityName: 'Miasto testowe 3',
-    cityGoogleID: '0003',
+    cityName: 'Miasto testowe Kraków',
+    cityGoogleID: 'ChIJ0RhONcBEFkcRv4pHdrW2a7Q',
     placeName: 'Dwudziesta druga lokalizacja w mieście!',
     placeDescription: 'Lokalizacja dwudziesta druga, miasto to samo co w trzeciej',
     placePrice: 2200,
